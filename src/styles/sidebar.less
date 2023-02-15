@@ -1,0 +1,92 @@
+#app {
+  .main-container {
+    min-height: 100%;
+    transition: margin-left 0.28s;
+    margin-left: @sideBarWidth;
+    position: relative;
+  }
+  .set-collapse {
+    margin-left: 64px;
+  }
+
+  .sidebar-container {
+    transition: width 0.28s;
+    width: @sideBarWidth;
+    height: 100%;
+    position: fixed;
+    font-size: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1001;
+    overflow: hidden;
+    background-color: @menuBg;
+
+    .el-scrollbar {
+      padding-top:10px;
+    }
+    .el-scrollbar__view {
+      height: 100%;
+    }
+    .el-menu {
+      height: 100%;
+      background-color: @menuBg;
+    }
+    .el-sub-menu__title,.el-menu-item {
+      height: 36px;
+      line-height: 36px;
+      margin: 2px 0;
+    }
+    .nest-menu {
+      .el-menu-item {
+        padding: 0 20px 0 30px
+      }
+    }
+    .el-sub-menu__title:hover {
+      background-color: unset;
+    }
+    .el-menu-item:hover {
+      background-color: unset;
+      .menu-title {
+        width: 100%;
+        border-radius: 4px;
+        color: #fff;
+        background-color: @menuHover;
+      }
+    }
+    .el-menu-item.is-active {
+      .menu-title {
+        width: 100%;
+        border-radius: 4px;
+        color: #fff;
+        background-color: @primaryColor;
+      }
+    }
+    .el-menu-item,.el-sub-menu__title {
+      padding-left: 10px;
+    }
+    .menu-title {
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+    }
+    // 子菜单，才有padding
+    .el-sub-menu .el-menu {
+      .menu-title {
+        padding-left: 20px;
+      }
+    }
+
+    .fold {
+      position: absolute;
+      bottom: 10px;
+      font-size: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      cursor: pointer;
+    }
+  }
+  .collapse-width {
+    width: 64px;
+  }
+}

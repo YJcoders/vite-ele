@@ -1,0 +1,33 @@
+@primaryColor: #1377EB;
+@textColor: #1A253B;
+@textSecondColor: #4E5D78;
+@labelColor: #8894A8;
+@borderColor: #E1E5EB;
+@bgColor:#F5F7FA;
+@linkColor: #E7F1FD;
+
+
+
+@tableHeaderBg: #EDF1F7;
+// sidebar
+@menuBg: #545c64;
+@menuHover: #263445;
+@sideBarWidth: 220px;
+
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+  primaryColor: @primaryColor;
+  textColor: @textColor;
+  textSecondColor: @textSecondColor;
+  labelColor: @labelColor;
+  borderColor: @borderColor;
+  bgColor: @bgColor;
+  linkColor: @linkColor;
+
+  tableHeaderBg: @tableHeaderBg;
+
+  menuBg: @menuBg;
+  menuHover: @menuHover;
+  sideBarWidth: @sideBarWidth;
+}
