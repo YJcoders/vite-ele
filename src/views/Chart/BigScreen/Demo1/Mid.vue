@@ -14,7 +14,7 @@
       <div class="lable-box">
         <p class="lable-content">
           <span
-            class="marker"
+              class="marker"
             style="background-color: #55ff00; boxshadow: 0 0 5px red"
           ></span>
           <span>当月销售量完成率 ≥ 100%</span>

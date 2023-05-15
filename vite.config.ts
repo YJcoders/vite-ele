@@ -44,6 +44,39 @@ export default defineConfig({
       "element-plus/lib/locale/lang/en",
     ],
   },
+  build: {
+    minify: "esbuild", //压缩方式 esbuild terser
+    // terserOptions: {
+    //   // 针对 terser 方式 生效 但是目前tree-shaking未生效
+    //   compress: {
+    //     drop_console: true,
+    //     drop_debugger: true,
+    //   },
+    //   output: {
+    //     // 去掉注释内容
+    //     comments: false,
+    //   },
+    // },
+    rollupOptions: {
+      input: "index.html",
+      output: {
+        // 静态资源打包做处理
+        chunkFileNames: "static/js/[name]-[hash].js",
+        entryFileNames: "static/js/[name]-[hash].js",
+        assetFileNames: "static/[ext]/[name]-[hash].[ext]",
+        manualChunks(id) {
+          if (id.includes("node_modules")) {
+            return id
+              .toString()
+              .split("node_modules/")[1]
+              .split("/")[0]
+              .toString();
+          }
+        },
+        // inlineDynamicImports: true, // 开启按需加载
+      },
+    },
+  },
   server: {
     hmr: { overlay: false }, // 禁用或配置 HMR 连接 设置 server.hmr.overlay 为 false 可以禁用服务器错误遮罩层
 

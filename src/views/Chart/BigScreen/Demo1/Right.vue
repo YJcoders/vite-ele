@@ -1,5 +1,6 @@
 <template>
   <div class="board-right">
+    <!-- begin----- -->
     <!-- <border-box> -->
     <div class="static border-box">
       <div class="title-box">
